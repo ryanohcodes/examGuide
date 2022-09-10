@@ -1,0 +1,476 @@
+/* GENERAL STYLING */
+/* test */
+/* Banner */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+}
+
+#banner {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    cursor: default;
+    height: 100vh;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+/* phase in of the txet */
+    #banner h2 {
+        -moz-transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+        -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+        -ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        display: inline-block;
+        font-size: 1.75em;
+        opacity: 1;
+        padding: 0.35em 1em;
+        position: relative;
+        z-index: 1;
+    }
+    /* text for the while lines */
+        #banner h2:before, #banner h2:after {
+            -moz-transition: width 0.85s ease;
+            -webkit-transition: width 0.85s ease;
+            -ms-transition: width 0.85s ease;
+            transition: width 0.85s ease;
+            -moz-transition-delay: 0.25s;
+            -webkit-transition-delay: 0.25s;
+            -ms-transition-delay: 0.25s;
+            transition-delay: 0.25s;
+            background: #fff;
+            content: '';
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+        }
+
+        #banner h2:before {
+            top: 0;
+            left: 0;
+        }
+
+        #banner h2:after {
+            bottom: 0;
+            right: 0;
+        }
+
+    #banner:after {
+        pointer-events: none;
+        -moz-transition: opacity 3s ease-in-out;
+        -webkit-transition: opacity 3s ease-in-out;
+        -ms-transition: opacity 3s ease-in-out;
+        transition: opacity 3s ease-in-out;
+        -moz-transition-delay: 1.25s;
+        -webkit-transition-delay: 1.25s;
+        -ms-transition-delay: 1.25s;
+        transition-delay: 1.25s;
+        content: '';
+        background: #2e3842;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+	body.is-preload #banner h2 {
+		-moz-transform: scale(0.95);
+		-webkit-transform: scale(0.95);
+		-ms-transform: scale(0.95);
+		transform: scale(0.95);
+		opacity: 0;
+	}
+    body.is-preload #banner h2:before, body.is-preload #banner h2:after {
+        width: 0;
+    }
+
+body.is-preload #banner:after {
+    opacity: 1;
+}
+
+/* Landing */
+
+body.landing #page-wrapper {
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/classroom.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/classroom.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/classroom.jpg");
+    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/classroom.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+#banner h2,#banner p{
+    color: white;
+}
+.root{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+    .root button{
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid black;
+        border-radius: 10px;
+        background: whitesmoke;
+        transition: 0.5s ease all;
+    }
+    .root button:hover{
+        background: gray;
+        color:white;
+    }
+    .root a:hover{
+        color:white;
+    }
+    .root a{
+        color: black;
+    } 
+
+#banner .inner p{
+    padding: 3em 
+}
+
+/* sign up page */
+
+.signup{
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/signup2.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/signup2.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/signup2.jpg");
+    background-image: linear-gradient(top, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/signup2.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+
+.signup h1,.signup h2{
+    color:white;
+}
+.organize{
+    padding-left: 27%;
+    padding-right: 35%;
+    padding-top: 13%;
+    max-height: 100vh;
+}
+.organize,.organize form, .organize h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+.organize form{
+    padding-top: 5%;
+}
+.btn2{
+    background: ghostwhite;
+    color: black;
+    padding: 0.5rem;
+    margin: 0.5rem 1rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    width: 75%;
+    min-height: auto;
+}
+
+.btn2:hover {
+    background: gray;
+    color: white;
+}
+
+.signup .organize h1{
+    font-size: 3rem;
+}
+
+/* log in */
+.login{
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0)), url("../images/login.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0)), url("../images/login.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0)), url("../images/login.jpg");
+    background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.0)), url("../images/login.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+
+.login .organize{
+    padding-left: 10%;
+    padding-right: 50%;
+}
+
+.login .organize h1{
+    color:white
+}
+
+.organize .error{
+    color: white;
+    padding-top: 10%;
+}
+
+/* home */
+.home{
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/cozy.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/cozy.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/cozy.jpg");
+    background-image: linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.0.3)), url("../images/cozy.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    padding-top: 0;
+}
+
+.home #banner {
+    max-height: 100vh;
+    width: 100%;
+}
+
+.home #page-wrapper{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: content;
+    height: 50vh;
+}
+
+.home #page-wrapper .inner{
+    max-height: 60vh;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.home a,a {
+    background: ghostwhite;
+    color: black;
+    padding: 0.5rem;
+    margin: 3rem 1rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    width: 15rem;
+    min-height: auto;
+}
+
+.home a:hover,a:hover, .organizeRight a:hover {
+    background: gray;
+    color: white;
+}
+.home  #banner:after {
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -ms-transition-delay: 1s;
+    transition-delay: 1s;
+}
+
+.database{
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/database.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/database.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/database.jpg");
+    background-image: linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.0.1)), url("../images/database.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+.database h2{
+    display: flex;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    width: fit-content;
+    margin: 1vw 25vw 0 25vw;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: #fff 0 0 0 1px;
+    text-decoration: solid;
+    color: white;
+}
+
+.database h2:hover{
+    background: rgba(0,0,0,0.2);
+    color: black;
+}
+
+.box{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.organizeLeft,.organizeRight{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.organizeLeft{
+    padding: 5%;
+    max-width: 50vw;
+}
+
+.organizeLeft li {
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.1);
+}
+.organizeLeft li:hover{
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+.organizeRight{
+    padding: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+.organizeRight a{
+    background: ghostwhite;
+    color: black;
+    padding: 0.5rem;
+    margin: 0.5rem 1rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease all;
+    width: 50%;
+    min-height: auto;
+}
+
+h1{
+    font-size: 3rem;
+    transition: 0.5s ease all;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2rem;
+    transition: 0.5s ease all;
+    padding: 0.5rem 2rem;
+}
+
+/* FORMS AND BUTTONS */
+
+input {
+    height: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 20rem;
+}
+
+input:hover{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+
+input:active{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+
+/* FONT AWESOME DELETE BUTTON */
+
+.del {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.del:hover {
+    cursor: pointer;
+    color: red;
+}
+
+/* MOBILE RESPONSIVE STUFF */
+
+@media screen and (max-width: 900px) {
+    .home #page-wrapper{
+        width: 100%;
+        padding-top: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    input {
+        width: 100%
+    }
+    
+    .home a {
+        width: 12rem;
+    }
+    
+    .home #banner .inner h2{
+        font-size: 1.2rem;
+    }
+    
+    .database h2 {
+        margin: 1vw 5vw 0 5vw;
+    }
+    
+    .signup {
+        width: 100%;
+    }
+
+    .signup .organize h1{
+        font-size: 2rem;
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 2rem;
+    }
+    .signup .organize h1{
+        font-size: 1.5rem;
+        margin-top: 4rem;
+    }
+}
