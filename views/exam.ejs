@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+</head>
+<body>
+    <h1>Exam # <%= sess %></h1>
+    <% const n = Math.floor(Math.random()*bank.length) %>
+    
+    <form action="/post/<%=bank[n]._id%>" method="POST">
+                <fieldset> 
+                    <h2 data-id="<%=bank[n].TestQuestion%>" 
+                        value="<%=bank[n].TestQuestion%>"> <%= bank[n].question %></h2>
+                    <input type="radio" name ='answer' id="a" 
+                    value="<%= bank[n].a %>">
+                    <label for="a"><%= bank[n].a %></label>
+                    <input type="radio" name ='answer' id="b" value="<%= bank[n].b %>">
+                    <label for="b"><%= bank[n].b %></label>
+                    <input type="radio" name ='answer' id="c" value="<%= bank[n].c %>">
+                    <label for="c"><%= bank[n].c %></label>
+                    <input type="radio" name ='answer' id="d" value="<%= bank[n].d %>">
+                    <label for="d"><%= bank[n].d %></label>
+                </fieldset>
+            <button type="submit">Submit</button>
+    </form>
+    <a href="/profile"><button>Overview</button></a>
+</body>
+</html>

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const TestSchema = new mongoose.Schema({
-  title: {
+  question: {
     type: String,
     required: true,
   },
@@ -21,7 +21,10 @@ const TestSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
+  completed:{
+    type: Boolean,
+    required: false,
+  }
 });
 
 module.exports = mongoose.model("TestQuestion", TestSchema);
