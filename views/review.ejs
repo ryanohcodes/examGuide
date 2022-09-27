@@ -7,6 +7,9 @@
     <title>review</title>
 </head>
 <body>
+    <% for(let i = 1; i < totalExams; i++){ %>
+        <a href="/past/<%=i%>"><button>Exam <%=i%></button></a>
+    <%}%> 
     <button><a href="/profile">Return Home</a></button>
 </body>
 </html>

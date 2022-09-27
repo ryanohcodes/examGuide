@@ -9,7 +9,10 @@ router.get("/", homeController.getIndex);
 router.get("/completed/",homeController.finishedExam)
 router.get("/profile/",homeController.getProfile);
 router.get("/exam",homeController.getExam);
+router.get("/final", homeController.finalSubmit)
+router.get("/again/:id", homeController.reviewProblem)
 router.get("/review",homeController.getReview);
+router.get("/past/:id",homeController.getOldExam)
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

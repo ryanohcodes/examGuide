@@ -10,9 +10,10 @@
     <section>
         <ul>
             <%for(let i = 0; i<results.length;i++){%>
-                <li><a href=""><%=results[i]%></a></li>
+                <li><a href="/again/<%=results[i].id%>">Question <%=[i+1]%></a></li>
             <%}%>
         </ul>
+        <a href="/final"><Button>Submit Final Answers</Button></a>
     </section>
 </body>
 </html>

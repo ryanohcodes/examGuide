@@ -305,7 +305,12 @@ body.landing #page-wrapper {
     -ms-transition-delay: 1s;
     transition-delay: 1s;
 }
-
+div.picked h4.correct{
+    color: green;
+}
+div.picked h4.wrong{
+    color: red;
+}
 .database{
     background-image: -moz-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/database.jpg");
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/database.jpg");
