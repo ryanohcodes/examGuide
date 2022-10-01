@@ -42,9 +42,11 @@ module.exports = {
     try{
       const questions = await TestQuestion.find()
       const sess = req.user.session
-      const done = await UsersCopy.find({completed: true,
-      session: sess})
-      
+      const done = await UsersCopy.find({
+        user: req.user.id,
+        completed: true,
+        session: sess, 
+    })
       const usersQuestions1 = await UsersCopy.find({completed: false})
 
       if(questions.length === done.length){

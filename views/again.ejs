@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam</title>
+    <script src="../js/main.js" defer></script>
+    
 </head>
 <body>
     <h1>Exam # <%= sess %></h1>    
@@ -12,14 +14,13 @@
                 <fieldset> 
                     <h2 data-id="<%=bank.TestQuestion%>" 
                         value="<%=bank.TestQuestion%>"> <%= bank.question %></h2>
-                    <input type="radio" name ='answer' id="a" 
-                    value="<%= bank.a %>">
+                    <input type="radio" name ='answer' id="a" value="<%= bank.a %>" <%= bank.selected === bank.a ? 'checked' : "" %>>
                     <label for="a"><%= bank.a %></label>
-                    <input type="radio" name ='answer' id="b" value="<%= bank.b %>">
+                    <input type="radio" name ='answer' id="b" value="<%= bank.b %>" <%= bank.selected === bank.b ? 'checked' : "" %>>
                     <label for="b"><%= bank.b %></label>
-                    <input type="radio" name ='answer' id="c" value="<%= bank.c %>">
+                    <input type="radio" name ='answer' id="c" value="<%= bank.c %>" <%= bank.selected === bank.c ? 'checked' : "" %>>
                     <label for="c"><%= bank.c %></label>
-                    <input type="radio" name ='answer' id="d" value="<%= bank.d %>">
+                    <input type="radio" name ='answer' id="d" value="<%= bank.d %>" <%= bank.selected === bank.d ? 'checked' : "" %>>
                     <label for="d"><%= bank.d %></label>
                 </fieldset>
             <button type="submit">Submit</button>
