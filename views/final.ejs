@@ -9,16 +9,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Exam Results</h1>
-    <h1>Your total score is <%=total%> % </h1>
-    <% for(let i=0; i < results.length; i++) {%>
-        <h3>Question <%=i+1%>: <%=results[i].question %></h3>
-        <div class="<%=results[i].a === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">A: <%=results[i].a %></h4></div>
-        <div class="<%=results[i].b === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">B: <%=results[i].b %></h4></div>
-        <div class="<%=results[i].c === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">C: <%=results[i].c %></h4></div>
-        <div class="<%=results[i].d === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">D: <%=results[i].d %></h4></div>
-    <% } %>           
-
-    <a href="/profile"><button class="btn btn-secondary">Return Home</button></a>
+    <main>
+        <h1>Exam Results</h1>
+        <h2>Your total score is <%=total%> %</h2>
+        <h2><%= total >= 70 ? 'PASS' : 'FAIL' %></h2>
+    </main>
+    <a href="/review"><button class="btn btn-secondary">Review Exam</button></a>
 </body>
 </html>
