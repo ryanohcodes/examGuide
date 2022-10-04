@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finished Exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <section>
-        <ul>
+    <main class="review">
             <%for(let i = 0; i<results.length;i++){%>
-                <li><a href="/again/<%=results[i].id%>">Question <%=[i+1]%></a></li>
+                <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary">Question <%=[i+1]%></button></a>
             <%}%>
-        </ul>
-        <a href="/final"><Button>Submit Final Answers</Button></a>
-    </section>
+    </main>
+    <footer>
+        <a href="/final"><Button class="btn btn-primary">Submit Final Answers</Button></a>
+    </footer>
 </body>
 </html>

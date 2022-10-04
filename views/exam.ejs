@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <h1>Exam # <%= sess %></h1>
     <% const n = Math.floor(Math.random()*bank.length) %>
-    
-    <form action="/post/<%=bank[n]._id%>" method="POST">
-                <fieldset> 
-                    <h2 data-id="<%=bank[n].TestQuestion%>" 
-                        value="<%=bank[n].TestQuestion%>"> <%= bank[n].question %></h2>
-                    <input type="radio" name ='answer' id="a" 
-                    value="<%= bank[n].a %>">
-                    <label for="a"><%= bank[n].a %></label>
-                    <input type="radio" name ='answer' id="b" value="<%= bank[n].b %>">
-                    <label for="b"><%= bank[n].b %></label>
-                    <input type="radio" name ='answer' id="c" value="<%= bank[n].c %>">
-                    <label for="c"><%= bank[n].c %></label>
-                    <input required type="radio" name ='answer' id="d" value="<%= bank[n].d %>">
-                    <label for="d"><%= bank[n].d %></label>
-                </fieldset>
-            <button type="submit">Submit</button>
-    </form>
-    <a href="/profile"><button>Overview</button></a>
+    <main>
+        <form action="/post/<%=bank[n]._id%>" method="POST">
+            <fieldset> 
+                <h2 data-id="<%=bank[n].TestQuestion%>" 
+                    value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
+                    <div class="question">
+                        <div>
+                            <input type="radio"class="radio radio-accent" name ='answer' id="a" 
+                            value="<%= bank[n].a %>">
+                            <label for="a"> A: <%= bank[n].a %></label>
+                        </div>
+                        <div>
+                            <input type="radio"class="radio radio-accent" name ='answer' id="b" value="<%= bank[n].b %>">
+                            <label for="b">B: <%= bank[n].b %></label>
+                        </div>
+                        <div>
+                            <input type="radio"class="radio radio-accent" name ='answer' id="c" value="<%= bank[n].c %>">
+                            <label for="c">C: <%= bank[n].c %></label>
+                        </div>
+                        <div>
+                            <input required type="radio"class="radio radio-accent" name ='answer' id="d" value="<%= bank[n].d %>">
+                            <label for="d">D: <%= bank[n].d %></label>
+                        </div>
+                    </div>
+            </fieldset>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+    </main>
+<footer>
+    <a href="/profile"><button class="btn btn-secondary">Return Home</button></a>
+</footer>
 </body>
 </html>

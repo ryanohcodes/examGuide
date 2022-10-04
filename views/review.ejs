@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>review</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
-    <% for(let i = 1; i < totalExams; i++){ %>
-        <a href="/past/<%=i%>"><button>Exam <%=i%></button></a>
-    <%}%> 
-    <button><a href="/profile">Return Home</a></button>
+    <h1>You can review your old exams here.</h1>
+    <main class="review">
+        <% for(let i = 1; i < totalExams; i++){ %>
+            <a href="/past/<%=i%>"><button class="btn btn-primary">Exam <%=i%></button></a>
+        <%}%> 
+    </main>
+    
+    <footer>
+        <button class="btn btn-secondary" ><a href="/profile">Return Home</a></button>
+    </footer>
 </body>
 </html>
