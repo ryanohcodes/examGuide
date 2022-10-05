@@ -1,7 +1,9 @@
 /* GENERAL STYLING */
 /* test */
 /* Banner */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,20 +22,40 @@ div.picked h4.wrong{
 .question{
     display:flex;
     flex-direction: column;
-    
+}
+.buttonColumn{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.center{
+    max-width: 100%;
 }
 main{
     display:flex;
     justify-content: center;
+}
+img{
+    width:30%
 }
 .review{
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .review a{
-    margin: 2%
+    margin: 2%;
+}
+.smallSpace{
+    margin-top: 2%;
+}
+.marginTop{
+    margin-top: 6.25rem;
+}
+.makeButtonSolid{
+    background-color: dodgerblue;
 }
 footer{
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }

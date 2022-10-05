@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
       <div class="card-body">
         <main class="container">
           <div class="row justify-content-center">
-            <section class="col-6 mt-5">
+            <section class="col-6">
               <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
               <div class="alert alert-danger"><%= el.msg %></div>
               <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -33,7 +33,7 @@
                   >
                   <input
                     type="email"
-                    class="form-control"
+                    class="input input-bordered input-primary w-full max-w-xs"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     name="email"
@@ -43,7 +43,7 @@
                   <label for="exampleInputPassword1" class="form-label">Password</label>
                   <input
                     type="password"
-                    class="form-control"
+                    class="input input-bordered input-primary w-full max-w-xs"
                     id="exampleInputPassword1"
                     name="password"
                   />

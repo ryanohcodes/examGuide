@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +9,20 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body >
-    <div class="hero min-h-screen" style="background-image: url(../images/classroom.jpg);">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-            <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+<body class="center">
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-row-reverse lg:flex-row-reverse">
+      <img src="../images/newclass.png" class="max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold">My ClassRoom</h1>
+        <p class="py-6">Your environment to simulate the exam setting. </p>
             <a href="/login"><button class="btn btn-primary">Login</button></a>
-            <a href="/signup"><button class="btn btn-primary">Sign Up</button></a>
-          </div>
-        </div>
+            <a href="/signup"><button class="btn btn-primary">Sign Up for My ClassRoom</button></a>
       </div>
+    </div>
+  </div>
 </body>
 
 </html>                         
+
+<%- include('../partials/footer'); %>

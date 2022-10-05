@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,30 +18,36 @@
                 <h2 data-id="<%=bank[n].TestQuestion%>" 
                     value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
                     <div class="question">
-                        <div>
-                            <input type="radio"class="radio radio-accent" name ='answer' id="a" 
-                            value="<%= bank[n].a %>">
-                            <label for="a"> A: <%= bank[n].a %></label>
+                        <div >
+                            <label class="label cursor-pointer" for="a"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank[n].a %>">
+                            <span><%= bank[n].a %></span> 
+                            </label>
                         </div>
                         <div>
-                            <input type="radio"class="radio radio-accent" name ='answer' id="b" value="<%= bank[n].b %>">
-                            <label for="b">B: <%= bank[n].b %></label>
+                            <label class="label cursor-pointer" for="b"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank[n].b %>">
+                            <span><%= bank[n].b %></span> 
+                            </label>
                         </div>
                         <div>
-                            <input type="radio"class="radio radio-accent" name ='answer' id="c" value="<%= bank[n].c %>">
-                            <label for="c">C: <%= bank[n].c %></label>
+                            <label class="label cursor-pointer" for="c"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank[n].c %>">
+                            <span><%= bank[n].c %></span> 
+                            </label>
                         </div>
                         <div>
-                            <input required type="radio"class="radio radio-accent" name ='answer' id="d" value="<%= bank[n].d %>">
-                            <label for="d">D: <%= bank[n].d %></label>
+                            <label class="label cursor-pointer" for="d"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank[n].d %>">
+                            <span><%= bank[n].d %></span> 
+                            </label>
                         </div>
                     </div>
             </fieldset>
         <button type="submit" class="btn btn-primary" >Submit</button>
-</form>
+    </form>
     </main>
-<footer>
-    <a href="/profile"><button class="btn btn-secondary">Return Home</button></a>
-</footer>
+    <a href="/profile"><button class="btn btn-primary">Return Home</button></a>
+    <!-- <%- include('./partials/footer'); %> -->
 </body>
 </html>
