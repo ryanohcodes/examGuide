@@ -22,6 +22,7 @@ div.picked h4.wrong{
 .question{
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .buttonColumn{
     display:flex;

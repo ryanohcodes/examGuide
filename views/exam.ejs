@@ -12,41 +12,41 @@
 <body>
     <h1>Exam # <%= sess %></h1>
     <% const n = Math.floor(Math.random()*bank.length) %>
-    <main>
-        <form action="/post/<%=bank[n]._id%>" method="POST">
-            <fieldset> 
-                <h2 data-id="<%=bank[n].TestQuestion%>" 
-                    value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
-                    <div class="question">
-                        <div >
-                            <label class="label cursor-pointer" for="a"> 
-                            <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank[n].a %>">
-                            <span><%= bank[n].a %></span> 
-                            </label>
+        <div class="container p-16 pl-40  ">
+            <form action="/post/<%=bank[n]._id%>" method="POST">
+                <fieldset class="border-4 border-solid bg-amber-100 rounded-lg border-black "> 
+                    <h2 data-id="<%=bank[n].TestQuestion%>" 
+                        value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
+                        <div class="question p-4">
+                            <div >
+                                <label class="label cursor-pointer justify-start" for="a"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank[n].a %>">
+                                <span class="pl-16"><%= bank[n].a %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="b"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank[n].b %>">
+                                <span class="pl-16"><%= bank[n].b %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="c"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank[n].c %>">
+                                <span class="pl-16"><%= bank[n].c %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="d"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank[n].d %>">
+                                <span class="pl-16"><%= bank[n].d %></span> 
+                                </label>
+                            </div>
                         </div>
-                        <div>
-                            <label class="label cursor-pointer" for="b"> 
-                            <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank[n].b %>">
-                            <span><%= bank[n].b %></span> 
-                            </label>
-                        </div>
-                        <div>
-                            <label class="label cursor-pointer" for="c"> 
-                            <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank[n].c %>">
-                            <span><%= bank[n].c %></span> 
-                            </label>
-                        </div>
-                        <div>
-                            <label class="label cursor-pointer" for="d"> 
-                            <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank[n].d %>">
-                            <span><%= bank[n].d %></span> 
-                            </label>
-                        </div>
-                    </div>
-            </fieldset>
-        <button type="submit" class="btn btn-primary" >Submit</button>
-    </form>
-    </main>
+                </fieldset>
+            <button type="submit" class="btn btn-primary bg-red-400 mt-8" >Submit</button>
+        </form>
+        </div>
     <a href="/profile"><button class="btn btn-primary">Return Home</button></a>
     <!-- <%- include('./partials/footer'); %> -->
 </body>

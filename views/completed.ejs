@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +11,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <main class="review">
+    <table class="table-auto">
+        <thead>
+          <tr>
+            <th>Question</th>
+          </tr>
+        </thead>
+        <tbody class="flex flex-col">
             <%for(let i = 0; i<results.length;i++){%>
-                <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary">Question <%=[i+1]%></button></a>
-            <%}%>
-    </main>
+                <tr>
+                    <td>
+                        <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary">Question: <%=results[i].question%></button></a>
+                    </td>
+                </tr>
+            <%}%>            
+        </tbody>
+      </table>
     <footer>
         <a href="/final"><Button class="btn btn-primary">Submit Final Answers</Button></a>
     </footer>
+
 </body>
 </html>
