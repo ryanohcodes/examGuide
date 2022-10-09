@@ -14,7 +14,7 @@
     <% const n = Math.floor(Math.random()*bank.length) %>
         <div class="container p-16 pl-40  ">
             <form action="/post/<%=bank[n]._id%>" method="POST">
-                <fieldset class="border-4 border-solid bg-amber-100 rounded-lg border-black "> 
+                <fieldset class="border-4 border-solid bg-cyan-200 rounded-lg border-black "> 
                     <h2 data-id="<%=bank[n].TestQuestion%>" 
                         value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
                         <div class="question p-4">
@@ -44,10 +44,10 @@
                             </div>
                         </div>
                 </fieldset>
-            <button type="submit" class="btn btn-primary bg-red-400 mt-8" >Submit</button>
+            <button type="submit" class="btn btn-primary bg-blue-400 mt-8 text-slate-200" >Submit</button>
         </form>
         </div>
-    <a href="/profile"><button class="btn btn-primary">Return Home</button></a>
+    <a href="/profile"><button class="btn btn-primary ">Return Home</button></a>
     <!-- <%- include('./partials/footer'); %> -->
 </body>
 </html>

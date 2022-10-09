@@ -55,8 +55,3 @@ img{
 .makeButtonSolid{
     background-color: dodgerblue;
 }
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
