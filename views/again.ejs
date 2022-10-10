@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam</title>
-    <script src="../js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Exam # <%= sess %></h1>    
-    <form action="/post/<%=bank._id%>" method="POST">
-                <fieldset> 
+    <header>
+        <div class="navbar ">
+          <div class="flex-1">
+            <img class="w-24 rounded-full ml-32" src="/images/logo.png" alt="logo">
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+              <li><a href="/completed" class="mr-32 ">Exam Overview</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <h1 class="pl-40 pt-4">Exam # <%= sess %></h1>
+        <div class="container p-16 pl-40 ">
+            <form action="/post/<%=bank._id%>" method="POST">
+                <fieldset class="border-4 border-solid bg-cyan-200 rounded-lg border-black "> 
                     <h2 data-id="<%=bank.TestQuestion%>" 
-                        value="<%=bank.TestQuestion%>">Question: <div><%= bank.question %></div></h2>
-                    <input type="radio" class="radio radio-accent" name ='answer' id="a" value="<%= bank.a %>" <%= bank.selected === bank.a ? 'checked' : "" %>>
-                    <label for="a"><%= bank.a %></label>
-                    <input type="radio" class="radio radio-accent" name ='answer' id="b" value="<%= bank.b %>" <%= bank.selected === bank.b ? 'checked' : "" %>>
-                    <label for="b"><%= bank.b %></label>
-                    <input type="radio" class="radio radio-accent" name ='answer' id="c" value="<%= bank.c %>" <%= bank.selected === bank.c ? 'checked' : "" %>>
-                    <label for="c"><%= bank.c %></label>
-                    <input type="radio" class="radio radio-accent" name ='answer' id="d" value="<%= bank.d %>" <%= bank.selected === bank.d ? 'checked' : "" %>>
-                    <label for="d"><%= bank.d %></label>
+                        value="<%=bank.TestQuestion%>">Question: <%= bank.question %></h2>
+                        <div class="question p-4">
+                            <div >
+                                <label class="label cursor-pointer justify-start" for="a"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank.a %>"  <%= bank.selected === bank.a ? 'checked' : "" %>>
+                                <span class="pl-16"><%= bank.a %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="b"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank.b %>"  <%= bank.selected === bank.b ? 'checked' : "" %>>
+                                <span class="pl-16"><%= bank.b %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="c"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank.c %>"  <%= bank.selected === bank.c ? 'checked' : "" %>>
+                                <span class="pl-16"><%= bank.c %></span> 
+                                </label>
+                            </div>
+                            <div>
+                                <label class="label cursor-pointer justify-start" for="d"> 
+                                <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank.d %>"  <%= bank.selected === bank.d ? 'checked' : "" %>>
+                                <span class="pl-16"><%= bank.d %></span> 
+                                </label>
+                            </div>
+                        </div>
                 </fieldset>
-            <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-    <a href="/completed"><button class="btn btn-secondary">Questions Page</button></a>
+            <button type="submit" class="btn btn-primary bg-blue-400 mt-8 text-slate-200" >Submit</button>
+        </form>
+        </div>
 </body>
 </html>

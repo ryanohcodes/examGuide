@@ -11,22 +11,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <table class="table-auto">
-        <thead>
-          <tr>
-            <th>Question</th>
-          </tr>
-        </thead>
-        <tbody class="flex flex-col">
-            <%for(let i = 0; i<results.length;i++){%>
-                <tr>
-                    <td>
-                        <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary">Question: <%=results[i].question%></button></a>
-                    </td>
-                </tr>
-            <%}%>            
-        </tbody>
-      </table>
+    <div class="overflow-x-auto">
+        <table class="table w-full">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>Answer</th>
+              </tr>
+            </thead>
+            <tbody class="flex flex-col">
+                <%for(let i = 0; i<results.length;i++){%>
+                    <tr>
+                        <td class="min-w-[48rem]">
+                            <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary btn-block"><%=results[i].question%></button></a>
+                        </td>
+                        <td><span><%=results[i].selected%></span></td>
+                    </tr>
+                    
+                <%}%>            
+            </tbody>
+          </table>
+    </div>
+    
     <footer>
         <a href="/final"><Button class="btn btn-primary">Submit Final Answers</Button></a>
     </footer>

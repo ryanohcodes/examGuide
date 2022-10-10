@@ -16,7 +16,7 @@ module.exports = {
       session: req.user.session, correct:true
     })
     const total = Math.floor(100*(correct.length/results.length))
-    res.render('final.ejs',{results:results, total:total})
+    res.render('final.ejs',{results:results, total:total, examNumber:req.user.session})
   },
   reviewProblem: async(req,res) =>{
     const problem = await UsersCopy.findById(req.params.id)

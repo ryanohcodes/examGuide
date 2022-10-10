@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <main>
-        <h1>Exam Results</h1>
-        <h2>Your total score is <%=total%> %</h2>
-        <h2><%= total >= 70 ? 'PASS' : 'FAIL' %></h2>
-    </main>
-    <a href="/review"><button class="btn btn-secondary">Review Exam</button></a>
-</body>
+    <body class="center">
+        <div class="hero min-h-screen bg-base-200">
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-3xl font-bold">Exam Results</h1>
+              <h2 class="text-3xl font-bold pt-8 pb-8">Your total score is <%=total%> %</h2>
+              <h2 class="text-9xl font-bold pb-8 <%= total >= 70 ? 'text-emerald-400': 'text-rose-500' %>"><%= total >= 70 ? 'PASS' : 'FAIL' %></h2>
+              <a href="/past/<%=examNumber%>"><button class="btn btn-primary btn-wide">Review Your Exam</button></a>
+              <a href="/review"><button class="btn btn-primary btn-wide" style="margin-top: 5%;">Review Past Exams</button></a>
+            </div>
+          </div>
+        </div>
+      </body>
 </html>
