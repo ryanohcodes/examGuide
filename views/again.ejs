@@ -17,46 +17,52 @@
           </div>
           <div class="flex-none">
             <ul class="menu menu-horizontal p-0">
-              <li><a href="/completed" class="mr-32 ">Exam Overview</a></li>
+              <li><a href="/completed" class="mr-32 border-solid border-2 border-sky-700">Exam Overview</a></li>
             </ul>
           </div>
         </div>
       </header>
-    <h1 class="pl-40 pt-4">Exam # <%= sess %></h1>
-        <div class="container p-16 pl-40 ">
+      <div class="flex flex-col items-center">
+        <h1 class="text-3xl font-bold pb-8">Exam # <%= sess %></h1>
+      </div>
+      <section class="ml-32 text-2xl pb-8 mr-32">  
             <form action="/post/<%=bank._id%>" method="POST">
-                <fieldset class="border-4 border-solid bg-cyan-200 rounded-lg border-black "> 
+                <fieldset> 
                     <h2 data-id="<%=bank.TestQuestion%>" 
-                        value="<%=bank.TestQuestion%>">Question: <%= bank.question %></h2>
+                        value="<%=bank.TestQuestion%>">Question: 
+                        <div class="pt-4">
+                            <%= bank.question %>
+                        </div>
+                    </h2>
                         <div class="question p-4">
                             <div >
                                 <label class="label cursor-pointer justify-start" for="a"> 
                                 <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank.a %>"  <%= bank.selected === bank.a ? 'checked' : "" %>>
-                                <span class="pl-16"><%= bank.a %></span> 
+                                <span class="pl-8">A: <%= bank.a %></span> 
                                 </label>
                             </div>
                             <div>
                                 <label class="label cursor-pointer justify-start" for="b"> 
                                 <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank.b %>"  <%= bank.selected === bank.b ? 'checked' : "" %>>
-                                <span class="pl-16"><%= bank.b %></span> 
+                                <span class="pl-8">B: <%= bank.b %></span> 
                                 </label>
                             </div>
                             <div>
                                 <label class="label cursor-pointer justify-start" for="c"> 
                                 <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank.c %>"  <%= bank.selected === bank.c ? 'checked' : "" %>>
-                                <span class="pl-16"><%= bank.c %></span> 
+                                <span class="pl-8">C: <%= bank.c %></span> 
                                 </label>
                             </div>
                             <div>
                                 <label class="label cursor-pointer justify-start" for="d"> 
                                 <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank.d %>"  <%= bank.selected === bank.d ? 'checked' : "" %>>
-                                <span class="pl-16"><%= bank.d %></span> 
+                                <span class="pl-8">D: <%= bank.d %></span> 
                                 </label>
                             </div>
                         </div>
                 </fieldset>
             <button type="submit" class="btn btn-primary bg-blue-400 mt-8 text-slate-200" >Submit</button>
         </form>
-        </div>
+    </section>
 </body>
 </html>

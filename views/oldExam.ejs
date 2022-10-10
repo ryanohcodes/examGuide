@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Exam Results</h1>
-    <h1>Your total score is <%=total%> % </h1>
+    <header>
+        <div class="navbar ">
+          <div class="flex-1">
+            <img class="w-24 rounded-full ml-32 mr-32" src="/images/logo.png" alt="logo">
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+            <li class="pr-4"><a href="/review" class="border-solid border-2 border-sky-700"> Return to Old Exams</a></li>
+              <li ><a href="/profile" class="mr-32 border-solid border-2 border-sky-700">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <div class="flex flex-col items-center">
+        <h1 class="text-3xl font-bold">Exam #<%=examNumber%> Results</h1>
+        <h2 class="text-3xl font-bold pt-4 pb-4">Your total score is <%=total%> %</h2>
+        <h2 class="text-3xl font-bold pb-8 <%= total >= 70 ? 'text-emerald-400': 'text-rose-500' %>"><%= total >= 70 ? 'PASS' : 'FAIL' %></h2>
+    </div>
     <% for(let i=0; i < results.length; i++) {%>
-        <h3>Question <%=i+1%>: <%=results[i].question %></h3>
-        <div class="<%=results[i].a === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">A: <%=results[i].a %></h4></div>
-        <div class="<%=results[i].b === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">B: <%=results[i].b %></h4></div>
-        <div class="<%=results[i].c === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">C: <%=results[i].c %></h4></div>
-        <div class="<%=results[i].d === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">D: <%=results[i].d %></h4></div>
+        <section class="ml-32 text-2xl pb-8">
+            <h3>Question <%=i+1%>: <%=results[i].question %></h3>
+            <div class="pt-8 pb-4 <%=results[i].a === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">A: <%=results[i].a %></h4></div>
+            <div class="pb-4 <%=results[i].b === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">B: <%=results[i].b %></h4></div>
+            <div class="pb-4 <%=results[i].c === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">C: <%=results[i].c %></h4></div>
+            <div class="pb-4 <%=results[i].d === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">D: <%=results[i].d %></h4></div>
+        </section>
     <% } %>            
 
-    <a href="/review"><button class="btn btn-secondary">Return to Past Exams</button></a>
+    
 </body>
 </html>

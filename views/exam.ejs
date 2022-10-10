@@ -17,47 +17,57 @@
           </div>
           <div class="flex-none">
             <ul class="menu menu-horizontal p-0">
-              <li><a href="/profile" class="mr-32 ">Home</a></li>
+              <li><a href="/profile" class="mr-32 border-solid border-2 border-sky-700">Home</a></li>
             </ul>
           </div>
         </div>
       </header>
-    <h1 class="pl-40 pt-4">Exam # <%= sess %></h1>
+    <div class="flex flex-col items-center">
+        <h1 class="text-3xl font-bold pb-8">Exam # <%= sess %></h1>
+    </div>
     <% const n = Math.floor(Math.random()*bank.length) %>
-        <div class="container p-16 pl-40 ">
-            <form action="/post/<%=bank[n]._id%>" method="POST">
-                <fieldset class="border-4 border-solid bg-cyan-200 rounded-lg border-black "> 
-                    <h2 data-id="<%=bank[n].TestQuestion%>" 
-                        value="<%=bank[n].TestQuestion%>">Question: <%= bank[n].question %></h2>
-                        <div class="question p-4">
-                            <div >
-                                <label class="label cursor-pointer justify-start" for="a"> 
-                                <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank[n].a %>">
-                                <span class="pl-16"><%= bank[n].a %></span> 
-                                </label>
-                            </div>
-                            <div>
-                                <label class="label cursor-pointer justify-start" for="b"> 
-                                <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank[n].b %>">
-                                <span class="pl-16"><%= bank[n].b %></span> 
-                                </label>
-                            </div>
-                            <div>
-                                <label class="label cursor-pointer justify-start" for="c"> 
-                                <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank[n].c %>">
-                                <span class="pl-16"><%= bank[n].c %></span> 
-                                </label>
-                            </div>
-                            <div>
-                                <label class="label cursor-pointer justify-start" for="d"> 
-                                <input type="radio" class="radio radio-primary" name ='answer' id="d" value="<%= bank[n].d %>">
-                                <span class="pl-16"><%= bank[n].d %></span> 
-                                </label>
-                            </div>
+    <section class="ml-32 text-2xl pb-8 mr-32">   
+        <form action="/post/<%=bank[n]._id%>" method="POST">
+            <fieldset> 
+                
+                <h2 data-id="<%=bank[n].TestQuestion%>" 
+                    value="<%=bank[n].TestQuestion%>">Question: 
+                    <div class="pt-4">
+                        <%= bank[n].question %>
+                    </div>
+                </h2>
+                    <div class="question p-4">
+                        <div >
+                            <label class="label cursor-pointer justify-start" for="a"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="a" value="<%= bank[n].a %>">
+                            <span class="pl-8">A: <%= bank[n].a %></span> 
+                            </label>
                         </div>
-                </fieldset>
-            <button type="submit" class="btn btn-primary bg-blue-400 mt-8 text-slate-200" >Submit</button>
-        </form>
-        </div>
+                        <div>
+                            <label class="label cursor-pointer justify-start" for="b"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="b" value="<%= bank[n].b %>">
+                            <span class="pl-8">B: <%= bank[n].b %></span> 
+                            </label>
+                        </div>
+                        <div>
+                            <label class="label cursor-pointer justify-start" for="c"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="c" value="<%= bank[n].c %>">
+                            <span class="pl-8">C: <%= bank[n].c %></span> 
+                            </label>
+                        </div>
+                        <div>
+                            <label class="label cursor-pointer justify-start" for="d"> 
+                            <input type="radio" class="radio radio-primary" name ='answer' id="d" required value="<%= bank[n].d %>">
+                            <span class="pl-8">D: <%= bank[n].d %></span> 
+                            </label>
+                        </div>
+                    </div>
+            </fieldset>
+        <button type="submit" class="btn btn-primary bg-blue-400 mt-8 text-slate-200" >Submit</button>
+    </form>
+    </section>
+           
 </body>
 </html>
+
+      

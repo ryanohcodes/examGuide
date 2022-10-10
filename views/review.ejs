@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="winter">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,15 +10,23 @@
     <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
-    <h1>You can review your old exams here.</h1>
-    <main class="review">
+    <header>
+        <div class="navbar ">
+          <div class="flex-1">
+            <img class="w-24 rounded-full ml-32" src="/images/logo.png" alt="logo">
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal p-0">
+              <li ><a href="/profile" class="mr-32 border-solid border-2 border-sky-700">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <h1 class="text-3xl font-bold flex justify-center">Click on an old exam to review.</h1>
+    <main class="review ml-32 mr-32">
         <% for(let i = 1; i < totalExams; i++){ %>
             <a href="/past/<%=i%>"><button class="btn btn-primary">Exam <%=i%></button></a>
         <%}%> 
     </main>
-    
-    <footer>
-        <button class="btn btn-secondary" ><a href="/profile">Return Home</a></button>
-    </footer>
 </body>
 </html>

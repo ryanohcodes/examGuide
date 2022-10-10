@@ -10,32 +10,45 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="overflow-x-auto">
-        <table class="table w-full">
-            <thead>
-              <tr>
-                <th>Question</th>
-                <th>Answer</th>
-              </tr>
-            </thead>
-            <tbody class="flex flex-col">
-                <%for(let i = 0; i<results.length;i++){%>
-                    <tr>
-                        <td class="min-w-[48rem]">
-                            <a href="/again/<%=results[i].id%>"><button class="btn btn-accent btn-secondary btn-block"><%=results[i].question%></button></a>
-                        </td>
-                        <td><span><%=results[i].selected%></span></td>
-                    </tr>
-                    
-                <%}%>            
-            </tbody>
-          </table>
+<header>
+    <div class="navbar ">
+      <div class="flex-1">
+        <img class="w-24 rounded-full ml-32" src="/images/logo.png" alt="logo">
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal p-0">
+          <li><a href="/profile" class="mr-32 border-solid border-2 border-sky-700">Home</a></li>
+        </ul>
+      </div>
     </div>
-    
-    <footer>
-        <a href="/final"><Button class="btn btn-primary">Submit Final Answers</Button></a>
+  </header>
+<body>
+    <div>
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl font-bold pb-8">Exam #<%=examNumber%> Review</h1>
+        </div>
+        <div>
+            <%for(let i = 0; i<results.length;i++){%>
+            <section class="ml-32 pb-8 text-2xl pt-8 ">
+                <h2 class="pb-8 font-semibold">Question <%=i+1%>: 
+                    <div class="font-normal">
+                        <%=results[i].question%>
+                    </div>
+                </h2>   
+                <h2 class="pb-4 font-semibold">Answer selected:
+                    <div class="font-normal">
+                        <%=results[i].selected%>
+                    </div>
+                </h2>
+                <h2>
+                    <a href="/again/<%=results[i].id%>"><button class="btn btn-accent">Visit Question</button></a>
+                </h2>            
+            </section>
+            <%}%>            
+        </div>
+    </div>
+    <footer class="pt-8">
+        <a class="ml-32" href="/final"><Button class="btn btn-primary btn-wide">Submit Final Answers</Button></a>
     </footer>
-
 </body>
 </html>

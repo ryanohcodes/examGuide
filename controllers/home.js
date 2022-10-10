@@ -31,7 +31,8 @@ module.exports = {
       const results = await UsersCopy.find({user: req.user.id,
         session: req.user.session
       })
-      res.render("completed.ejs", {results:results})
+      const examNumber = req.user.session
+      res.render("completed.ejs", {results:results,examNumber:examNumber})
       return
     }catch(err){
       console.log(err)
@@ -91,6 +92,6 @@ module.exports = {
     console.log(exam.length)
     console.log(correct.length)
     const total = Math.floor(100*(correct.length/exam.length))
-    res.render('oldExam.ejs',{results:exam,total:total})
+    res.render('oldExam.ejs',{results:exam,total:total, examNumber:req.params.id})
   }
 };
