@@ -7,11 +7,14 @@ module.exports = {
   getIndex: (req, res) => {
     res.render("index.ejs");
   },
-  finalSubmit: async(req,res) =>{
-    const results = await UsersCopy.find({user:req.user.id, session: req.user.session})
+  increaseExam: async(req,res) =>{
     await User.findOneAndUpdate({_id:req.user.id},{
       $inc: { session: 1 },
     })
+    res.redirect(`/past/${req.params.exam}`)
+  },
+  finalSubmit: async(req,res) =>{
+    const results = await UsersCopy.find({user:req.user.id, session: req.user.session})
     const correct = await UsersCopy.find({user: req.user.id,
       session: req.user.session, correct:true
     })
@@ -33,7 +36,6 @@ module.exports = {
     }catch(err){
       console.log(err)
     }
-    
   },
   getProfile:(req,res)=>{
     res.render("profile.ejs");
