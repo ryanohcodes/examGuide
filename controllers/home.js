@@ -14,7 +14,7 @@ module.exports = {
     res.redirect(`/past/${req.params.exam}`)
   },
   finalSubmit: async(req,res) =>{
-    const results = await UsersCopy.find({user:req.user.id, session: req.user.session})
+    const results = await UsersCopy.find({user:req.user.id, session: req.user.session}).sort({num : 1})
     const correct = await UsersCopy.find({user: req.user.id,
       session: req.user.session, correct:true
     })
@@ -87,7 +87,7 @@ module.exports = {
     res.render("review.ejs",{totalExams:totalExams});
   },
   getOldExam: async(req,res) =>{
-    const exam = await UsersCopy.find({session:req.params.id, user: req.user.id})
+    const exam = await UsersCopy.find({session:req.params.id, user: req.user.id}).sort({num : 1})
     const correct = await UsersCopy.find({user: req.user.id,
       session: req.params.id, correct:true
     })
