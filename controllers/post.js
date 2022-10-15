@@ -6,6 +6,8 @@ const UsersCopy = require("../models/UsersCopy");
 module.exports = {
     createAnswer: async (req, res) => {
         try {
+          console.log(req.body)
+          console.log(req.params)
           await UsersCopy.findOneAndUpdate({_id: req.params.id},{
             selected: req.body.answer,
             completed: true,

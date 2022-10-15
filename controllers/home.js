@@ -49,7 +49,7 @@ module.exports = {
         user: req.user.id,
         completed: true,
         session: sess, 
-    })
+       })
       const usersQuestions1 = await UsersCopy.find({completed: false})
 
       if(questions.length === done.length){
@@ -73,8 +73,9 @@ module.exports = {
         }
       }
       const usersQuestions = await UsersCopy.find({completed: false})
+      const number = done.length + 1
 
-      res.render("exam.ejs",{bank:usersQuestions,sess:sess});
+      res.render("exam.ejs",{bank:usersQuestions,sess:sess,number:number});
       return
     }catch(err){
       console.log(err)
