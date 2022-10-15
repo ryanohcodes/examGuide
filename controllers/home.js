@@ -1,5 +1,4 @@
 const TestQuestion = require('../models/TestQuestion')
-const Submitted = require("../models/Submitted")
 const UsersCopy = require('../models/UsersCopy');
 const User = require('../models/User')
 
