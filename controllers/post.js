@@ -1,5 +1,4 @@
-const Submitted = require("../models/Submitted")
-const Test = require("../models/TestQuestion")
+
 const Answer = require("../models/Answer");
 const UsersCopy = require("../models/UsersCopy");
 
@@ -8,10 +7,19 @@ module.exports = {
         try {
           console.log(req.body)
           console.log(req.params)
+          const sess = req.user.session
+          const done = await UsersCopy.find({
+            user: req.user.id,
+            completed: true,
+            session: sess, 
+           })
+           const questionNum = done.length + 1
+           console.log(questionNum)
           await UsersCopy.findOneAndUpdate({_id: req.params.id},{
             selected: req.body.answer,
             completed: true,
-            correct: false
+            correct: false,
+            num: questionNum,
           });
           const question = await UsersCopy.findOne({_id: req.params.id})
           const result = await Answer.find({answerTo: question.TestQuestion,

@@ -30,7 +30,7 @@ module.exports = {
     try{
       const results = await UsersCopy.find({user: req.user.id,
         session: req.user.session
-      })
+      }).sort({num : 1})
       const examNumber = req.user.session
       res.render("completed.ejs", {results:results,examNumber:examNumber})
       return
@@ -68,7 +68,8 @@ module.exports = {
             d: questions[i].d,
             user: req.user.id,
             completed: false,
-            selected: false 
+            selected: false,
+            num: 0,
           })
         }
       }

@@ -45,6 +45,10 @@ const UserCopySchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  num:{
+    type: Number,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("UserCopy", UserCopySchema);

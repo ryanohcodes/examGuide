@@ -24,7 +24,11 @@ const TestSchema = new mongoose.Schema({
   completed:{
     type: Boolean,
     required: false,
-  }
+  },
+  num:{
+    type: Number,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("TestQuestion", TestSchema);
