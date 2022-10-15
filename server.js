@@ -57,6 +57,19 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 //Server Running
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}, you better catch it!`);
+// app.listen(process.env.PORT, () => {
+//   console.log(`Server is running on port ${process.env.PORT}, you better catch it!`);
+// });
+
+//Cyclic 
+
+const { MongoClient } = require('mongodb');
+const uri = process.env.DB_STRING;
+const client = new MongoClient(uri);
+client.connect(err => {
+  if(err){ console.error(err); return false;}
+  // connection to mongo is successful, listen for requests
+  app.listen(3000, () => {
+      console.log("listening for requests");
+  })
 });
