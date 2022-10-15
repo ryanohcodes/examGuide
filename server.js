@@ -69,7 +69,7 @@ const client = new MongoClient(uri);
 client.connect(err => {
   if(err){ console.error(err); return false;}
   // connection to mongo is successful, listen for requests
-  app.listen(3000, () => {
+  app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
 });
