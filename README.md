@@ -1,20 +1,24 @@
-# Install
+## My Passion Project
 
-`npm install`
+It creates an unlimited number of exams similar to the ones asked in testing centers. The idea is that you can keep taking newly randomized exams, review old exams, and gain confidence before taking the real thing. 
 
----
 
-# Things to add
+**Link to project:** https://classroom.cyclic.app
 
-- Create a `.env` file in config folder and add the following as `key = value`
-  - PORT = 2121 (can be any port example: 3000)
-  - DB_STRING = `your database URI`
-  - CLOUD_NAME = `your cloudinary cloud name`
-  - API_KEY = `your cloudinary api key`
-  - API_SECRET = `your cloudinary api secret`
 
----
+## How It's Made:
 
-# Run
+**Tech used:** HTML, EJS, Tailwind CSS, JavaScript, MongoDB, Express, and Node.
 
-`npm start`
+The API controls what gets shown on the screen based on what is queried in MongoDB. 
+
+
+## Optimizations
+
+Implentating React would be a huge optimization because it would remove the need to refresh the page.
+
+
+## Lessons Learned:
+
+I spent a lot of time troubleshooting because of new ideas that required changing the schema and the database.
+Proper planning goes a long way.
