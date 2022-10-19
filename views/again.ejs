@@ -26,7 +26,7 @@
         <h1 class="text-3xl font-bold pb-8">Exam # <%= sess %></h1>
       </div>
       <section class="ml-32 text-2xl pb-8 mr-32">  
-            <form action="/post/<%=bank._id%>" method="POST">
+            <form action="/put/<%=bank._id%>" method="POST">
                 <fieldset> 
                     <h2 data-id="<%=bank.TestQuestion%>" 
                         value="<%=bank.TestQuestion%>">Question: <%= bank.num %>
