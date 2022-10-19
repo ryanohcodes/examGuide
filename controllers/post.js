@@ -13,6 +13,7 @@ module.exports = {
             completed: true,
             session: sess, 
            })
+           console.log(done.length)
            const questionNum = done.length + 1
            console.log(questionNum)
           await UsersCopy.findOneAndUpdate({_id: req.params.id},{
