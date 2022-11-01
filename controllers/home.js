@@ -42,6 +42,7 @@ module.exports = {
   },
   getExam: async (req,res)=>{
     try{
+      //need to compare with current done
       const questions = await TestQuestion.find()
       const sess = req.user.session
       const done = await UsersCopy.find({
