@@ -45,6 +45,7 @@ module.exports = {
       //need to compare with current done
       const questions = await TestQuestion.find()
       const sess = req.user.session
+      //gets done questions
       const done = await UsersCopy.find({
         user: req.user.id,
         completed: true,
