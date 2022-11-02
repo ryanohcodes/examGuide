@@ -52,6 +52,7 @@ module.exports = {
         session: sess, 
        })
        console.log(req.user.id)
+       //does the user have their own copy
       const usersQuestions1 = await UsersCopy.find({
         user: req.user.id,
         completed: false,
