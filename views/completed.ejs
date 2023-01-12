@@ -27,6 +27,10 @@
     <div>
         <div class="flex flex-col items-center">
             <h1 class="text-3xl font-bold pb-8">Exam #<%=examNumber%> Review</h1>
+            <h2 class="text-2xl font-bold pb-4" >Please scroll down to review your answers and submit. Or not.</h2>
+            <footer class="pt-8 pb-8 flex justify-center">
+                <a href="/final"><Button class="btn btn-primary btn-wide">Submit Final Answers</Button></a>
+            </footer>
         </div>
         <div>
             <%for(let i = 0; i<results.length;i++){%>
