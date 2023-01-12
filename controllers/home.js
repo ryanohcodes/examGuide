@@ -58,7 +58,13 @@ module.exports = {
         completed: false,
         session: sess, 
        })
-      console.log(usersQuestions1)
+       const usersQuestionsAnswered = await UsersCopy.find({
+        user: req.user.id,
+        completed: true,
+        session: sess, 
+       })
+      //console.log(`You answered ${usersQuestionsAnswered}`)
+      //console.log(`questions you did not answer ${usersQuestions1}`)
       if(questions.length === done.length){
         res.redirect('/completed')
         return
@@ -76,6 +82,7 @@ module.exports = {
             user: req.user.id,
             completed: false,
             selected: false,
+            correct: false,
             num: 0,
           })
         }

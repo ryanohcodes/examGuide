@@ -5,35 +5,38 @@ const UsersCopy = require("../models/UsersCopy");
 module.exports = {
     createAnswer: async (req, res) => {
         try {
+          const question = await UsersCopy.findOne({_id: req.params.id})
+          const result = await Answer.findOne({answerTo: question.TestQuestion})
+
           console.log(req.body)
           console.log(req.params)
+        
           const sess = req.user.session
+          //finds out how many we answer
           const done = await UsersCopy.find({
             user: req.user.id,
             completed: true,
             session: sess, 
            })
-           console.log(done.length)
+
            const questionNum = done.length + 1
-           console.log(questionNum)
-          await UsersCopy.findOneAndUpdate({_id: req.params.id},{
-            selected: req.body.answer,
-            completed: true,
-            correct: false,
-            num: questionNum,
-          });
-          const question = await UsersCopy.findOne({_id: req.params.id})
-          const result = await Answer.find({answerTo: question.TestQuestion,
-            answer: req.body.answer,
-          })
-          if(result.length > 0){
-            await UsersCopy.findOneAndUpdate({_id:req.params.id},{correct: true})
+
+           // updating the question we answered
+          try{
+            const wow = await UsersCopy.findOneAndUpdate({_id: req.params.id},{
+              selected: req.body.answer,
+              completed: true,
+              correct: result.answer == req.body.answer ? true : false,
+              num: questionNum,
+            })
+            console.log(wow);
+          }catch(error){
+            console.log(error);
           }
-          console.log('Answer has been added!');
-          console.log('The completed has been set to true')
-          res.redirect('/exam');
         } catch (err) {
           console.log(err);
+        }finally{
+          res.redirect("/exam");
         }
       },
 };
