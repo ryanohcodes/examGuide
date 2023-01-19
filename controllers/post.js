@@ -24,11 +24,11 @@ module.exports = {
            // updating the question we answered
           try{
             const wow = await UsersCopy.findOneAndUpdate({_id: req.params.id},{
-              selected: req.body.answer,
+              selected: req.body.answer.trim(),
               completed: true,
               correct: result.answer == req.body.answer ? true : false,
               num: questionNum,
-            })
+            },{new:true})
             console.log(wow);
           }catch(error){
             console.log(error);
