@@ -31,8 +31,9 @@
         <h2 class="text-3xl font-bold pb-8 <%= total >= 70 ? 'text-emerald-400': 'text-rose-500' %>"><%= total >= 70 ? 'PASS' : 'FAIL' %></h2>
     </div>
     <% for(let i=0; i < results.length; i++) {%>
-        <section class="ml-32 text-2xl pb-8">
-            <h3>Question <%=i+1%>: <%=results[i].question %></h3>
+        <section class="ml-32 text-2xl pb-8 mr-32">
+            <h3>Question <%=i+1%>:</h3> 
+            <div class="pt-4"><%=results[i].question %></div>
             <div class="pt-8 pb-4 <%=results[i].a === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">A: <%=results[i].a %></h4></div>
             <div class="pb-4 <%=results[i].b === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">B: <%=results[i].b %></h4></div>
             <div class="pb-4 <%=results[i].c === results[i].selected ? 'picked' : 'notPicked' %>"><h4 class="<%= results[i].correct === true ? 'correct' : 'wrong' %>">C: <%=results[i].c %></h4></div>

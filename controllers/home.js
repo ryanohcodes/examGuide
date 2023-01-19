@@ -53,45 +53,45 @@ module.exports = {
        })
        console.log(req.user.id)
        //does the user have their own copy
-      const usersQuestions1 = await UsersCopy.find({
-        user: req.user.id,
-        completed: false,
-        session: sess, 
-       })
-       const usersQuestionsAnswered = await UsersCopy.find({
-        user: req.user.id,
-        completed: true,
-        session: sess, 
-       })
-      //console.log(`You answered ${usersQuestionsAnswered}`)
-      //console.log(`questions you did not answer ${usersQuestions1}`)
+      // const usersQuestions1 = await UsersCopy.find({
+      //   user: req.user.id,
+      //   completed: false,
+      //   session: sess, 
+      //  })
+       const totalQuestions = questions.length;
+       console.log(questions.length)
+       console.log(done.length)
       if(questions.length === done.length){
         res.redirect('/completed')
         return
       }
-      if(usersQuestions1.length < 1){
-        for(let i = 0; i < questions.length;i++){
-          await UsersCopy.create({
-            session: sess,
-            TestQuestion: questions[i].id,
-            question: questions[i].question,
-            a: questions[i].a,
-            b: questions[i].b,
-            c: questions[i].c,
-            d: questions[i].d,
+      else if(done.length < 1){
+          for(let i = 0; i < questions.length;i++){
+            const newQuestions = await UsersCopy.create({
+              session: sess,
+              TestQuestion: questions[i].id,
+              question: questions[i].question,
+              a: questions[i].a,
+              b: questions[i].b,
+              c: questions[i].c,
+              d: questions[i].d,
+              user: req.user.id,
+              completed: false,
+              selected: false,
+              correct: false,
+              num: 0,
+            })
+          }
+      }
+      number = done.length + 1
+      const usersQuestions2 = await UsersCopy.find({
             user: req.user.id,
             completed: false,
-            selected: false,
-            correct: false,
-            num: 0,
-          })
-        }
-      }
-      const usersQuestions = await UsersCopy.find({completed: false})
-      const number = done.length + 1
-
-      res.render("exam.ejs",{bank:usersQuestions,sess:sess,number:number});
-      return
+            session: sess, 
+      })
+      console.log(usersQuestions2);
+      res.render("exam.ejs",{bank:usersQuestions2,sess:sess,number:number});
+      
     }catch(err){
       console.log(err)
     }
